@@ -1,10 +1,10 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 
 const letters = "AMAN SHUKLA".split("");
 
-const container = {
+const container: Variants = {
   hidden: {},
   show: {
     transition: {
@@ -13,7 +13,7 @@ const container = {
   },
 };
 
-const child = {
+const child: Variants = {
   hidden: {
     y: 60,
     opacity: 0,
@@ -25,7 +25,7 @@ const child = {
     rotateX: 0,
     transition: {
       duration: 0.7,
-      ease: "easeOut",
+      ease: "easeOut" as const,
     },
   },
 };
