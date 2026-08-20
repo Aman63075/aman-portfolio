@@ -27,7 +27,7 @@ export const FloatingNav = ({
   const [visible, setVisible] = useState(false);
   const [active, setActive] = useState("home");
 
-  // Navbar hide/show
+  // Show / Hide navbar
   useMotionValueEvent(scrollYProgress, "change", (current) => {
     if (typeof current !== "number") return;
 
@@ -41,7 +41,7 @@ export const FloatingNav = ({
     }
   });
 
-  // Active section detection
+  // Active section
   useEffect(() => {
     const sections = ["home", "about", "skills", "work", "contact"];
 
@@ -81,22 +81,22 @@ export const FloatingNav = ({
           className
         )}
       >
-        <div className="flex items-center gap-2 rounded-full border border-white/10 bg-black/40 px-2 py-2 shadow-2xl backdrop-blur-xl">
+        <div className="flex items-center gap-2 rounded-full border border-white/10 bg-black/45 px-2 py-2 shadow-2xl backdrop-blur-2xl">
           {navItems.map((item, idx) => {
             const id = item.link.replace("#", "");
 
             return (
               <button
                 key={idx}
-                onClick={() => {
+                onClick={() =>
                   document.getElementById(id)?.scrollIntoView({
                     behavior: "smooth",
-                  });
-                }}
+                  })
+                }
                 className={cn(
                   "rounded-full px-4 py-2 text-sm font-medium transition-all duration-300",
                   active === id
-                    ? "bg-blue-500 text-white shadow-lg"
+                    ? "bg-brand text-white glow-brand"
                     : "text-zinc-300 hover:bg-white/10 hover:text-white"
                 )}
               >

@@ -33,7 +33,7 @@ export default function Particles() {
       {particles.map((p) => (
         <motion.span
           key={p.id}
-          className="absolute h-1 w-1 rounded-full bg-blue-400"
+          className="absolute h-1.5 w-1.5 rounded-full bg-green-400 shadow-[0_0_10px_rgba(74,222,128,0.9)]"
           initial={{
             x: p.x,
             y: p.y,

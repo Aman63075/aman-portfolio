@@ -136,3 +136,38 @@
 html {
   scroll-behavior: auto;
 }
+/* =========================================================
+   AMAN PORTFOLIO — GARNET RED BRAND THEME
+   ========================================================= */
+
+:root {
+  --brand: #7a1f2b;
+  --brand-hover: #922b3a;
+  --brand-dark: #2a0d12;
+  --brand-soft: rgba(122, 31, 43, 0.12);
+  --brand-glow: rgba(122, 31, 43, 0.35);
+}
+
+.text-brand {
+  color: var(--brand);
+}
+
+.bg-brand {
+  background: var(--brand);
+}
+
+.border-brand {
+  border-color: var(--brand);
+}
+
+.glow-brand {
+  box-shadow: 0 0 45px var(--brand-glow);
+}
+
+.brand-gradient {
+  background: linear-gradient(
+    135deg,
+    var(--brand) 0%,
+    var(--brand-hover) 100%
+  );
+}

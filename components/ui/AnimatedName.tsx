@@ -36,7 +36,7 @@ export default function AnimatedName() {
       variants={container}
       initial="hidden"
       animate="show"
-      className="text-5xl font-black leading-none text-white sm:text-7xl md:text-8xl"
+      className="whitespace-nowrap text-5xl font-black leading-[0.9] text-white sm:text-7xl md:text-8xl lg:text-[5.5rem]"
       style={{ perspective: 1000 }}
     >
       {letters.map((letter, i) => (

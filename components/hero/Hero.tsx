@@ -1,13 +1,16 @@
 "use client";
+
 import Magnetic from "@/components/ui/Magnetic";
 import CursorGlow from "@/components/ui/CursorGlow";
 import AnimatedName from "@/components/ui/AnimatedName";
 import Particles from "@/components/ui/Particles";
+import NoiseBackground from "@/components/ui/NoiseBackground";
+import { FloatingNav } from "@/components/ui/floating-navbar";
+
 import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { gsap } from "gsap";
-import { FloatingNav } from "@/components/ui/floating-navbar";
-import NoiseBackground from "@/components/ui/NoiseBackground";
+
 import {
   IconHome,
   IconUser,
@@ -79,70 +82,71 @@ export default function Hero() {
         id="home"
         className="relative min-h-screen overflow-hidden bg-[#050816] text-white"
       >
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(37,99,235,0.18),transparent_60%)]" />
+        {/* Garnet background glow */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(212,175,55,0.18),transparent_60%)]" />
+
         <NoiseBackground />
         <Particles />
         <CursorGlow />
 
-        
-<div className="relative z-10 mx-auto flex min-h-screen max-w-7xl flex-col-reverse items-center justify-center px-6 pt-24 pb-12 md:flex-row md:justify-between md:px-10">
-  {/* Left Content */}
-  <motion.div
-    initial={{ opacity: 0, x: -50 }}
-    animate={{ opacity: 1, x: 0 }}
-    transition={{ duration: 0.8 }}
-    className="mt-10 max-w-xl text-center md:mt-0 md:text-left"
-  >
-    <p className="mb-4 text-xs uppercase tracking-[0.35em] text-blue-400 md:text-sm">
-      Cloud & Creative Developer
-    </p>
+        <div className="relative z-10 mx-auto flex min-h-screen max-w-7xl flex-col-reverse items-center justify-center px-6 pb-12 pt-24 md:flex-row md:justify-between md:px-10">
+          {/* Left Content */}
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            className="mt-10 max-w-xl text-center md:mt-0 md:text-left"
+          >
+            <p className="mb-4 text-xs uppercase tracking-[0.35em] text-brand md:text-sm">
+              Cloud & Creative Developer
+            </p>
 
-    <AnimatedName />
+            <AnimatedName />
 
-    <p className="mt-6 text-base leading-7 text-zinc-400 md:text-lg md:leading-8">
-      Designing AI-powered products, cloud solutions and cinematic digital
-      experiences.
-    </p>
+            <p className="mt-6 text-base leading-7 text-zinc-400 md:text-lg md:leading-8">
+              Designing AI-powered products, cloud solutions and cinematic digital
+              experiences.
+            </p>
 
-    <div className="mt-8 flex flex-col gap-3 sm:flex-row md:justify-start justify-center">
-  <Magnetic>
-    <a href="#work">
-      <button className="w-full rounded-full bg-blue-600 px-6 py-3 font-semibold hover:bg-blue-500 sm:w-auto">
-        View Work
-      </button>
-    </a>
-  </Magnetic>
+            <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row md:justify-start">
+              <Magnetic>
+                <a href="#work">
+                  <button className="w-full rounded-full bg-brand px-6 py-3 font-semibold text-white transition-all duration-300 hover:bg-[#922B3A] glow-brand sm:w-auto">
+                    View Work
+                  </button>
+                </a>
+              </Magnetic>
 
-  <Magnetic>
-    <a href="/Aman_Shukla_Resume.pdf" download>
-      <button className="w-full rounded-full border border-white/10 bg-white/5 px-6 py-3 font-semibold backdrop-blur hover:border-blue-500 sm:w-auto">
-        Download Resume
-      </button>
-    </a>
-  </Magnetic>
-</div>
-  </motion.div>
+              <Magnetic>
+                <a href="/Aman_Shukla_Resume.pdf" download>
+                  <button className="w-full rounded-full border border-white/10 bg-white/5 px-6 py-3 font-semibold backdrop-blur transition-all duration-300 hover:border-brand sm:w-auto">
+                    Download Resume
+                  </button>
+                </a>
+              </Magnetic>
+            </div>
+          </motion.div>
 
-  {/* Right Image */}
-  <motion.div
-    initial={{ opacity: 0, scale: 0.9 }}
-    animate={{ opacity: 1, scale: 1 }}
-    transition={{ delay: 0.3, duration: 0.8 }}
-    className="flex justify-center"
-  >
-    <div
-      ref={cardRef}
-      style={{ transformStyle: "preserve-3d" }}
-      className="rounded-[28px] border border-white/10 bg-white/5 p-2 backdrop-blur-xl shadow-[0_0_80px_rgba(37,99,235,0.15)]"
-    >
-      <img
-        src="/aman.png"
-        alt="Aman Shukla"
-        className="h-[300px] w-[230px] rounded-[22px] object-cover sm:h-[380px] sm:w-[280px] md:h-[560px] md:w-[420px]"
-      />
-    </div>
-  </motion.div>
-</div>
+          {/* Right Image */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.3, duration: 0.8 }}
+            className="flex justify-center"
+          >
+            <div
+              ref={cardRef}
+              style={{ transformStyle: "preserve-3d" }}
+              className="rounded-[28px] border border-white/10 bg-white/5 p-2 backdrop-blur-xl shadow-[0_0_80px_rgba(122,31,43,0.28)]"
+            >
+              <img
+                src="/aman.png"
+                alt="Aman Shukla"
+                className="h-[300px] w-[230px] rounded-[22px] object-cover sm:h-[380px] sm:w-[280px] md:h-[560px] md:w-[420px]"
+              />
+            </div>
+          </motion.div>
+        </div>
       </section>
     </>
   );
